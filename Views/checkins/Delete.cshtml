@@ -1,0 +1,56 @@
+﻿@model Alpha.Models.checkin
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>checkin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.hospede1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hospede1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horario_checkin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horario_checkin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horario_checkout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horario_checkout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.num_quarto1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.num_quarto1)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

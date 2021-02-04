@@ -1,0 +1,130 @@
+﻿@model Alpha.Models.reserva
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>reserva</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.hospede)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hospede)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_nascimento1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_nascimento1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpf1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpf1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_reserva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_reserva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_saida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_saida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horario_entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horario_entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horario_saida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horario_saida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_reserva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_reserva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.quarto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quarto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.num_quarto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.num_quarto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status_relacionamento1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status_relacionamento1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.reserva_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
