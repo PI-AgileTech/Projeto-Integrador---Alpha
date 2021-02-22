@@ -1,0 +1,50 @@
+﻿@model Alpha.Models.checkin
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>checkin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.hospede1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hospede1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horario_checkin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horario_checkin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horario_checkout)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horario_checkout)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.num_quarto1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.num_quarto1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.checkin_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="dados_pessoaisSet" EntityType="Model.Store.dados_pessoaisSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="reservaSet" EntityType="Model.Store.reservaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="checkinSet" EntityType="Model.Store.checkinSet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="dados_pessoaisSet">
+    <Key>
+      <PropertyRef Name="dados_pessoais_Id" />
+    </Key>
+    <Property Name="dados_pessoais_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="data_nascimento" Type="datetime" Nullable="false" />
+    <Property Name="cpf" Type="smallint" Nullable="false" />
+    <Property Name="sexo" Type="bit" Nullable="false" />
+    <Property Name="telefone" Type="smallint" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="rua" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="numero" Type="smallint" Nullable="false" />
+    <Property Name="bairro" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cep" Type="smallint" Nullable="false" />
+    <Property Name="uf" Type="bit" Nullable="false" />
+    <Property Name="status_relacionamento" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="reservaSet">
+    <Key>
+      <PropertyRef Name="reserva_Id" />
+    </Key>
+    <Property Name="reserva_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hospede" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="data_nascimento1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="cpf1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sexo" Type="bit" Nullable="false" />
+    <Property Name="data_reserva" Type="datetime" Nullable="false" />
+    <Property Name="data_saida" Type="datetime" Nullable="false" />
+    <Property Name="horario_entrada" Type="time" Nullable="false" />
+    <Property Name="horario_saida" Type="time" Nullable="false" />
+    <Property Name="tipo_reserva" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="quarto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="num_quarto" Type="smallint" Nullable="false" />
+    <Property Name="status_relacionamento1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="telefone1" Type="smallint" Nullable="false" />
+    <Property Name="email1" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="checkinSet">
+    <Key>
+      <PropertyRef Name="checkin_Id" />
+    </Key>
+    <Property Name="checkin_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hospede1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="horario_checkin" Type="time" Nullable="false" />
+    <Property Name="horario_checkout" Type="time" Nullable="false" />
+    <Property Name="num_quarto1" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="dados_pessoaisSet" EntityType="Model.dados_pessoais" />
+          <EntitySet Name="reservaSet" EntityType="Model.reserva" />
+          <EntitySet Name="checkinSet" EntityType="Model.checkin" />
+        </EntityContainer>
+        <EntityType Name="dados_pessoais">
+          <Key>
+            <PropertyRef Name="dados_pessoais_Id" />
+          </Key>
+          <Property Name="dados_pessoais_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" Nullable="false" />
+          <Property Name="data_nascimento" Type="DateTime" Nullable="false" />
+          <Property Name="cpf" Type="Int16" Nullable="false" />
+          <Property Name="sexo" Type="Boolean" Nullable="false" />
+          <Property Name="telefone" Type="Int16" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" />
+          <Property Name="rua" Type="String" Nullable="false" />
+          <Property Name="numero" Type="Int16" Nullable="false" />
+          <Property Name="bairro" Type="String" Nullable="false" />
+          <Property Name="cep" Type="Int16" Nullable="false" />
+          <Property Name="uf" Type="Boolean" Nullable="false" />
+          <Property Name="status_relacionamento" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="reserva">
+          <Key>
+            <PropertyRef Name="reserva_Id" />
+          </Key>
+          <Property Name="reserva_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hospede" Type="String" Nullable="false" />
+          <Property Name="data_nascimento1" Type="String" Nullable="false" />
+          <Property Name="cpf1" Type="String" Nullable="false" />
+          <Property Name="sexo" Type="Boolean" Nullable="false" />
+          <Property Name="data_reserva" Type="DateTime" Nullable="false" />
+          <Property Name="data_saida" Type="DateTime" Nullable="false" />
+          <Property Name="horario_entrada" Type="Time" Nullable="false" />
+          <Property Name="horario_saida" Type="Time" Nullable="false" />
+          <Property Name="tipo_reserva" Type="String" Nullable="false" />
+          <Property Name="quarto" Type="String" Nullable="false" />
+          <Property Name="num_quarto" Type="Int16" Nullable="false" />
+          <Property Name="status_relacionamento1" Type="String" Nullable="false" />
+          <Property Name="telefone1" Type="Int16" Nullable="false" />
+          <Property Name="email1" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="checkin">
+          <Key>
+            <PropertyRef Name="checkin_Id" />
+          </Key>
+          <Property Name="checkin_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hospede1" Type="String" Nullable="false" />
+          <Property Name="horario_checkin" Type="Time" Nullable="false" />
+          <Property Name="horario_checkout" Type="Time" Nullable="false" />
+          <Property Name="num_quarto1" Type="String" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="dados_pessoaisSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.dados_pessoais)">
+        <MappingFragment StoreEntitySet="dados_pessoaisSet">
+          <ScalarProperty Name="dados_pessoais_Id" ColumnName="dados_pessoais_Id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="data_nascimento" ColumnName="data_nascimento" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="rua" ColumnName="rua" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="bairro" ColumnName="bairro" />
+          <ScalarProperty Name="cep" ColumnName="cep" />
+          <ScalarProperty Name="uf" ColumnName="uf" />
+          <ScalarProperty Name="status_relacionamento" ColumnName="status_relacionamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reservaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.reserva)">
+        <MappingFragment StoreEntitySet="reservaSet">
+          <ScalarProperty Name="reserva_Id" ColumnName="reserva_Id" />
+          <ScalarProperty Name="hospede" ColumnName="hospede" />
+          <ScalarProperty Name="data_nascimento1" ColumnName="data_nascimento1" />
+          <ScalarProperty Name="cpf1" ColumnName="cpf1" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="data_reserva" ColumnName="data_reserva" />
+          <ScalarProperty Name="data_saida" ColumnName="data_saida" />
+          <ScalarProperty Name="horario_entrada" ColumnName="horario_entrada" />
+          <ScalarProperty Name="horario_saida" ColumnName="horario_saida" />
+          <ScalarProperty Name="tipo_reserva" ColumnName="tipo_reserva" />
+          <ScalarProperty Name="quarto" ColumnName="quarto" />
+          <ScalarProperty Name="num_quarto" ColumnName="num_quarto" />
+          <ScalarProperty Name="status_relacionamento1" ColumnName="status_relacionamento1" />
+          <ScalarProperty Name="telefone1" ColumnName="telefone1" />
+          <ScalarProperty Name="email1" ColumnName="email1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="checkinSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.checkin)">
+        <MappingFragment StoreEntitySet="checkinSet">
+          <ScalarProperty Name="checkin_Id" ColumnName="checkin_Id" />
+          <ScalarProperty Name="hospede1" ColumnName="hospede1" />
+          <ScalarProperty Name="horario_checkin" ColumnName="horario_checkin" />
+          <ScalarProperty Name="horario_checkout" ColumnName="horario_checkout" />
+          <ScalarProperty Name="num_quarto1" ColumnName="num_quarto1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
